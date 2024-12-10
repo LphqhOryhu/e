@@ -14,42 +14,42 @@
 
 /* Left-side images */
 .parallax-left {
-  left: 5%; /* Adjust for spacing from the left edge */
+  left: 3%; /* Adjust for spacing from the left edge */
 }
 
 #parallax-left-1 {
-  top: 10%; /* Top position for the first image */
   background-image: url('assets/left.png');
+  left: 5%;
 }
 
 #parallax-left-2 {
-  top: 35%; /* Top position for the second image */
+  top: 23%; /* Top position for the second image */
   background-image: url('assets/html.png');
+  left: 3.5%;
 }
 
 #parallax-left-3 {
-  top: 60%; /* Top position for the third image */
-  background-image: url('assets/js.png');
+  top: 46%; /* Top position for the third image */
+  background-image: url('assets/tailwind.jpg');
 }
 
 /* Right-side images */
 .parallax-right {
-  right: 5%; /* Adjust for spacing from the right edge */
+  right: 3%; /* Adjust for spacing from the right edge */
 }
 
 #parallax-right-1 {
-  top: 10%; /* Top position for the first image */
   background-image: url('assets/right.png');
 }
 
 #parallax-right-2 {
-  top: 35%; /* Top position for the second image */
+  top: 23%; /* Top position for the second image */
   background-image: url('assets/ts.png');
 }
 
 #parallax-right-3 {
-  top: 60%; /* Top position for the third image */
-  background-image: url('assets/tailwind.jpg');
+  top: 46%; /* Top position for the third image */
+  background-image: url('assets/js.png');
 }
 
 /* Responsive: Hide on small screens */

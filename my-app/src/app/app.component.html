@@ -7,7 +7,7 @@
 <div id="parallax-right-2" class="parallax-right"></div>
 <div id="parallax-right-3" class="parallax-right"></div>
 
-
+@if(this.isOpen === false){
 <!-- Main Content -->
 <header class="bg-cover bg-center bg-no-repeat p-16 border-b border-gray-200 shadow-lg" style="background-image: url('assets/texture.jpg');">
   <div class="text-center max-w-3xl mx-auto">
@@ -75,8 +75,75 @@
   </section>
 
   <div class="text-center mt-12">
-    <button class="bg-pink-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-pink-700 focus:outline-none focus:ring-4 focus:ring-pink-300 focus:ring-offset-2 transition ease-in-out duration-300">
+    <button (click)="toggleButton()" class="bg-pink-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-pink-700 focus:outline-none focus:ring-4 focus:ring-pink-300 focus:ring-offset-2 transition ease-in-out duration-300">
       Apply Now
     </button>
   </div>
 </main>
+}
+@else if (this.isOpen === true) {
+
+ <div class="bg-gray-100 p-10 shadow-lg rounded-lg max-w-5xl mx-auto mt-12">
+    <h2 class="text-3xl font-semibold mb-6 text-gray-900">Application Form</h2>
+    <form (submit)="submitFakeForm($event)" class="space-y-6">
+      <div>
+        <label for="name" class="block text-gray-700 font-medium">Full Name</label>
+        <input
+          type="text"
+          id="name"
+          class="mt-2 p-3 border rounded-lg w-full focus:ring-pink-500 focus:border-pink-500"
+          placeholder="Enter your full name"
+          required
+        />
+      </div>
+      <div>
+        <label for="email" class="block text-gray-700 font-medium">Email Address</label>
+        <input
+          type="email"
+          id="email"
+          class="mt-2 p-3 border rounded-lg w-full focus:ring-pink-500 focus:border-pink-500"
+          placeholder="Enter your email"
+          required
+        />
+      </div>
+      <div>
+        <label for="message" class="block text-gray-700 font-medium">Why do you want to join?</label>
+        <textarea
+          id="message"
+          class="mt-2 p-3 border rounded-lg w-full focus:ring-pink-500 focus:border-pink-500"
+          placeholder="Tell us about yourself"
+          rows="4"
+          required
+        ></textarea>
+      </div>
+      <div>
+        <label for="cv" class="block text-gray-700 font-medium">Upload Your CV</label>
+        <input
+          type="file"
+          id="cv"
+          class="mt-2 p-3 border rounded-lg w-full focus:ring-pink-500 focus:border-pink-500"
+          accept=".pdf,.doc,.docx"
+          required
+        />
+        <p class="text-sm text-gray-500 mt-1">Accepted formats: PDF, DOC, DOCX</p>
+      </div>
+      
+      <div class="text-center">
+        <button
+          type="submit"
+          class="bg-pink-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-pink-700 focus:outline-none focus:ring-4 focus:ring-pink-300 focus:ring-offset-2 transition ease-in-out duration-300"
+        >
+          Submit Application
+        </button>
+      </div>
+    </form>
+    <div class="text-center mt-4">
+      <button
+        (click)="toggleButton()"
+        class="text-pink-600 hover:underline"
+      >
+        Go Back
+      </button>
+    </div>
+  </div>
+}
