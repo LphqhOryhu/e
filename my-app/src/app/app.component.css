@@ -1,21 +1,61 @@
-/* CSS personnalisé pour le parallax */
+/* Common styles for parallax elements */
 .parallax-left,
 .parallax-right {
   position: fixed;
-  top: 0;
-  height: 100%; /* La hauteur de l'écran */
-  width: 300px; /* Largeur de l'image */
+  height: 20%; /* Smaller height */
+  width: 150px;
   background-repeat: no-repeat;
-  background-size: cover;
-  z-index: -1; /* Derrière le contenu principal */
+  background-size: contain;
+  opacity: 0; /* Start invisible */
+  transform: translateY(-200px); /* Positioned above the viewport initially */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+  z-index: -1;
 }
 
+/* Left-side images */
 .parallax-left {
-  left: 0;
-  background-image: url('assets/left.png'); /* Chemin de l'image gauche */
+  left: 5%; /* Adjust for spacing from the left edge */
 }
 
+#parallax-left-1 {
+  top: 10%; /* Top position for the first image */
+  background-image: url('assets/left.png');
+}
+
+#parallax-left-2 {
+  top: 35%; /* Top position for the second image */
+  background-image: url('assets/html.png');
+}
+
+#parallax-left-3 {
+  top: 60%; /* Top position for the third image */
+  background-image: url('assets/js.png');
+}
+
+/* Right-side images */
 .parallax-right {
-  right: 0;
-  background-image: url('assets/right.png'); /* Chemin de l'image droite */
+  right: 5%; /* Adjust for spacing from the right edge */
+}
+
+#parallax-right-1 {
+  top: 10%; /* Top position for the first image */
+  background-image: url('assets/right.png');
+}
+
+#parallax-right-2 {
+  top: 35%; /* Top position for the second image */
+  background-image: url('assets/ts.png');
+}
+
+#parallax-right-3 {
+  top: 60%; /* Top position for the third image */
+  background-image: url('assets/tailwind.jpg');
+}
+
+/* Responsive: Hide on small screens */
+@media (max-width: 768px) {
+  .parallax-left,
+  .parallax-right {
+    display: none;
+  }
 }
