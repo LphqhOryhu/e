@@ -1,0 +1,21 @@
+/* CSS personnalisé pour le parallax */
+.parallax-left,
+.parallax-right {
+  position: fixed;
+  top: 0;
+  height: 100%; /* La hauteur de l'écran */
+  width: 300px; /* Largeur de l'image */
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1; /* Derrière le contenu principal */
+}
+
+.parallax-left {
+  left: 0;
+  background-image: url('assets/left.png'); /* Chemin de l'image gauche */
+}
+
+.parallax-right {
+  right: 0;
+  background-image: url('assets/right.png'); /* Chemin de l'image droite */
+}
